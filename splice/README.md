@@ -7,7 +7,7 @@ Macro that enables splicing multi-values even when not at the last position in l
 ## Why?
 
 There already exists functions like `table.unpack` or `values`, but they only work at the end of surrounding table.
-Sometimes you want to surround multiple forms, e.g. you want `some-macro`
+Sometimes, mostly in macros, you want to surround multiple forms, e.g. you want `some-macro`
 ```fennel
 (some-macro
   form1
