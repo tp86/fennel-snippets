@@ -6,7 +6,7 @@ Macro that enables splicing multi-values even when not at the last position in l
 
 ## Why?
 
-There already exists functions like `table.unpack` or `values`, but they only work at the end of surrounding table.
+There already exist functions like `table.unpack` or `values`, but they only work at the end of surrounding table.
 Sometimes, mostly in macros, you want to surround multiple forms, e.g. you want `some-macro`
 ```fennel
 (some-macro
@@ -36,3 +36,6 @@ it would generate
   form1 ; form2 is lost!
   (print "after"))
 ```
+
+Ideally, it should be provided by language via reader macros, but unfortunately isn't (yet) - or at least I don't know
+about such macros.
