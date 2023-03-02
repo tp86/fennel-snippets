@@ -37,5 +37,8 @@ it would generate
   (print "after"))
 ```
 
+While in above case you could use `(do ,...)` and both forms would be executed, this does not apply to splicing data into sequences and tables.
+Also, it introduces new scope, which might not be desired.
+
 Ideally, it should be provided by language via reader macros, but unfortunately isn't (yet) - or at least I don't know
 about such macros.
