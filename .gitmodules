@@ -1,3 +1,6 @@
 [submodule "splice/tester"]
 	path = splice/tester
 	url = https://github.com/tp86/fennel-tester
+[submodule "declare-define/tester"]
+	path = declare-define/tester
+	url = https://github.com/tp86/fennel-tester
