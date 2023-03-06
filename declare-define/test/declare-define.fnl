@@ -37,3 +37,10 @@
 
   (local x 1))
   ;;(define x 2)) ; will trigger Compile error
+
+(test
+  "declared value can be referred before define"
+  (declare f)
+  (fn g [] (f))
+  (define f (fn [] 88))
+  (lu.assertEquals (g) 88))
