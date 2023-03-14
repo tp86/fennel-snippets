@@ -4,6 +4,10 @@
 
 Macro that enables splicing multi-values even when not at the last position in list/sequence/table.
 
+**NOTE**
+
+Unfortunately, does not work with `...` (yet?).
+
 ## Why?
 
 There already exist functions like `table.unpack` or `values`, but they only work at the end of surrounding table.
