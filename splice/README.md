@@ -4,10 +4,6 @@
 
 Macro that enables splicing multi-values even when not at the last position in list/sequence/table.
 
-**NOTE**
-
-Unfortunately, does not work with `...` (yet?).
-
 ## Why?
 
 There already exist functions like `table.unpack` or `values`, but they only work at the end of surrounding table.
@@ -46,3 +42,7 @@ Also, it introduces new scope, which might not be desired.
 
 Ideally, it should be provided by language via reader macros, but unfortunately isn't (yet) - or at least I don't know
 about such macros.
+
+## Usage
+
+See `test` folder for example usage.
