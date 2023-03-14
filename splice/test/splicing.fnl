@@ -82,10 +82,9 @@
     (lu.assertEquals tbl.a [1 2 3 4])
     (lu.assertEquals tbl.b [4 3 2 1])))
 
-(comment
-  (test
-    "splicing in macro"
-    (import-macros {: wrap-fn-return-nil} :test-data.splicing-in-macro)
-    (var x 1)
-    (lu.assertNil ((wrap-fn-return-nil 1 (set x 2) 3)))
-    (lu.assertEquals x 2)))
+(test
+  "splicing in macro"
+  (import-macros {: wrap-fn-return-nil} :test-data.splicing-in-macro)
+  (var x 1)
+  (lu.assertNil ((wrap-fn-return-nil 1 (set x 2) 3)))
+  (lu.assertEquals x 2))

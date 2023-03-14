@@ -1,4 +1,4 @@
-(import-macros {: with-splicing} :splicing)
+(local {: with-splicing} (require :splicing))
 
 (fn wrap-fn-return-nil [...]
   (with-splicing `(fn [] (&splice ,...) nil)))
