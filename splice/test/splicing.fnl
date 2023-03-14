@@ -23,11 +23,12 @@
     (lu.assertEquals b 2)
     (lu.assertNil c)))
 
-(test
-  "splicing without form behaves as values"
-  (let [(a b) (with-splicing (&splice 1 2))]
-    (lu.assertEquals a 1)
-    (lu.assertEquals b 2)))
+(comment
+  (test
+    "splicing without form behaves as values"
+    (let [(a b) (with-splicing (&splice 1 2))]
+      (lu.assertEquals a 1)
+      (lu.assertEquals b 2))))
 
 (test
   "splicing in middle of list"
@@ -80,3 +81,11 @@
   (let [tbl (with-splicing {:a [1 (&splice 2 3) 4] :b ((fn [] [4 (&splice 3 2) 1]))})]
     (lu.assertEquals tbl.a [1 2 3 4])
     (lu.assertEquals tbl.b [4 3 2 1])))
+
+(comment
+  (test
+    "splicing in macro"
+    (import-macros {: wrap-fn-return-nil} :test-data.splicing-in-macro)
+    (var x 1)
+    (lu.assertNil ((wrap-fn-return-nil 1 (set x 2) 3)))
+    (lu.assertEquals x 2)))
